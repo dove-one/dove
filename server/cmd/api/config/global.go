@@ -6,6 +6,9 @@ import (
 )
 
 var (
+	GlobalServerConfig ServerConfig
+	GlobalConsulConfig ConsulConfig
+
 	GlobalUserClient userservice.Client
 	GlobalAuthClient authservice.Client
 )

@@ -3,13 +3,26 @@
 package main
 
 import (
+	"fmt"
 	"github.com/cloudwego/hertz/pkg/app/server"
+	"github.com/dove-one/dove/server/cmd/api/config"
+	"github.com/dove-one/dove/server/cmd/api/initialize"
+	"github.com/dove-one/dove/server/cmd/api/initialize/rpc"
 )
 
 func main() {
-	h := server.New(
-		server.WithHostPorts(":8880"))
+	// initialize
+	//initialize.InitLogger()
+	initialize.InitConfig()
+	r, info := initialize.InitRegistry()
+	rpc.Init()
 
+	h := server.New(
+		server.WithALPN(true),
+		server.WithHostPorts(fmt.Sprintf(":%d", config.GlobalServerConfig.Port)),
+		server.WithRegistry(r, info),
+		server.WithHandleMethodNotAllowed(true),
+	)
 	register(h)
 	h.Spin()
 }
