@@ -1,9 +1,9 @@
-# start the environment of FreeCar
+# start the environment of Dove
 .PHONY: start
 start:
 	docker-compose up -d
 
-# stop the environment of FreeCar
+# stop the environment of Dove
 .PHONY: stop
 stop:
 	docker-compose down

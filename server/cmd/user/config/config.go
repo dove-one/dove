@@ -8,6 +8,15 @@
 
 package config
 
+type MysqlConfig struct {
+	Host     string `mapstructure:"host" json:"host"`
+	Port     int    `mapstructure:"port" json:"port"`
+	Name     string `mapstructure:"db" json:"db"`
+	User     string `mapstructure:"user" json:"user"`
+	Password string `mapstructure:"password" json:"password"`
+	Salt     string `mapstructure:"salt" json:"salt"`
+}
+
 type ConsulConfig struct {
 	Host string `mapstructure:"host" json:"host"`
 	Port int    `mapstructure:"port" json:"port"`
@@ -15,6 +24,7 @@ type ConsulConfig struct {
 }
 
 type ServerConfig struct {
-	Name string `mapstructure:"name" json:"name"`
-	Host string `mapstructure:"host" json:"host"`
+	Name      string      `mapstructure:"name" json:"name"`
+	Host      string      `mapstructure:"host" json:"host"`
+	MysqlInfo MysqlConfig `mapstructure:"mysql" json:"mysql"`
 }

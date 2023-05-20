@@ -24,5 +24,7 @@ func main() {
 		server.WithHandleMethodNotAllowed(true),
 	)
 	register(h)
+
+	fmt.Println(config.GlobalUserClient)
 	h.Spin()
 }

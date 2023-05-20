@@ -1,9 +1,8 @@
 package tools
 
 import (
+	"github.com/dove-one/dove/server/common/consts"
 	"net"
-
-	"github.com/CyanAsterisk/FreeCar/server/shared/consts"
 )
 
 // GetFreePort get a free port.
