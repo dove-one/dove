@@ -11,8 +11,6 @@ package consts
 import "time"
 
 const (
-	FreeCar    = "FreeCar"
-	Issuer     = "FreeCar"
 	Admin      = "Admin"
 	User       = "User"
 	ThirtyDays = time.Hour * 24 * 30

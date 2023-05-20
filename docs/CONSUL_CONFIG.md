@@ -22,7 +22,15 @@ _dove/user_srv_
 
 ```json
 {
-  "name":"user_srv"
+  "name":"user_srv",
+  "mysql": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "user": "YOUR_USER",
+    "password": "YOUR_PASSWORD",
+    "db": "dove",
+    "salt": "YOUR_SALT"
+  }
 }
 ```
 _dove/auth_srv_
